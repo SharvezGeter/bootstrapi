@@ -26,14 +26,19 @@ let cityInput = document.querySelector("#cityInput");
 let temp = document.querySelector("#temp");
 let wind = document.querySelector("#wind");
 let description = document.querySelector("#description");
-//let myCity = `https://goweather.herokuapp.com/weather/${cityInput.value}`
+let cityWeather =  document.querySelector("#cityWeather");
+
+
 
 weatherForm.addEventListener("submit", (event) => 
 {
+    
     let cityInput = document.querySelector("#cityInput");
     event.preventDefault();
 
     //https://goweather.herokuapp.com/weather/
+    
+
     fetch(encodeURI(`https://goweather.herokuapp.com/weather/{${cityInput.value}})`))
     .then(function(response){
         // console.log(response)
@@ -45,5 +50,6 @@ weatherForm.addEventListener("submit", (event) =>
         wind.innerText = data.wind
         description.innerText = data.description
     })
+    cityWeather.innerText = `Today's weather for ${cityInput.value}`
     cityInput.value = ""
 })

@@ -29,8 +29,16 @@ h1 {
 
 #data{
     display: flex;
-    color: black;
+    font-style: italic;
+    color: rgb(0, 0, 0);
     text-align: center;
     justify-content:flex-end    
      
+}
+#cityWeather{
+    color: rgb(0, 0, 0);
+}
+.card {
+    color: black;
+    text-align: center;
 }
